@@ -1,0 +1,10 @@
+{
+  "name": "flowAngela", 
+  "version": "1.0.0",
+  "type": "module",
+  "description": "primera aplicacion felipe flow",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "node test/app.test.js"
+  }
+}
