@@ -1,9 +1,9 @@
 export function saludar(nombre) {
-  return "Hola " + nombre + ", bienvenido a aplicacion de Estiben Flow!";
+  return "Hola " + nombre + ", bienvenido a aplicacion de Angela Flow!";
 }
 
 export function despedir(nombre) {
-  return "Hasta pronto, " + nombre + " ¡Estiben Flow!";
+  return "Hasta pronto, " + nombre + " ¡Angela Flow!";
 }
 
 export function sumar(a, b) {
