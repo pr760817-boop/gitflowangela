@@ -14,6 +14,7 @@ export function restar(a, b) {
   return a - b;
 }
 
+
 export function estadoSistema() {
   return {
     estado: "activo",
@@ -25,3 +26,6 @@ export function estadoSistema() {
 export function healthCheck() {
   return "OK";
 }
+
+//angela
+
