@@ -1,43 +1,74 @@
-export function saludar(nombre){
-  return "Hola " + nombre + ", bienvenido a mi aplicacion de Felipe!";
-}
+import {
+  saludar,
+  despedir,
+  estadoSistema,
+  sumar,
+  restar,
+  factorial
+} from "../src/app.js";
 
-export function despedir(nombre){
-  return "Hasta pronto, " + nombre + "! Felipe";
-}
+import assert from "assert";
 
-export function estadoSistema(){
-  return {
-    estado: "activo",
-    version: "1.0.0",
-    message: "sistema felipe funcionando correctamente"
-  };
-}
+function ejecutarPruebas() {
+  let pasadas = 0;
+  let fallidas = 0;
 
-export function sumar(a, b){
-  return a + b;
-}
-
-export function restar(a, b){
-  return a - b;
-}
-export function factorial(n) {
-  if (n < 0) {
-    throw new Error("El factorial no existe para números negativos");
+  // Test 1
+  const r1 = saludar("angela");
+  if (r1.includes("angela")) {
+    console.log("Test 1 pasado");
+    pasadas++;
+  } else {
+    console.log("Test 1 fallido:", r1);
+    fallidas++;
   }
 
-  let result = 1;
-
-  for (let i = 2; i <= n; i++) {
-    result *= i;
+  // Test 2
+  const actualEstado = estadoSistema();
+  if (actualEstado.estado === "activo") {
+    console.log("Test 2 pasado");
+    pasadas++;
+  } else {
+    console.log("Test 2 fallido:", actualEstado);
+    fallidas++;
   }
 
-  return result;
-}
-function crearUsuario(nombre, edad) {
-  return {
-    nombre,
-    edad
-  };
+  // Test 3
+  const r3 = sumar(5, 3);
+  if (r3 === 8) {
+    console.log("Test 3 pasado");
+    pasadas++;
+  } else {
+    console.log("Test 3 fallido:", r3);
+    fallidas++;
+  }
+
+  // Test 4
+  const r4 = restar(5, 3);
+  if (r4 === 2) {
+    console.log("Test 4 pasado");
+    pasadas++;
+  } else {
+    console.log("Test 4 fallido:", r4);
+    fallidas++;
+  }
+
+  // Test factorial
+  try {
+    assert.strictEqual(factorial(5), 120);
+    assert.strictEqual(factorial(0), 1);
+    assert.strictEqual(factorial(1), 1);
+
+    console.log("Test factorial pasado");
+    pasadas++;
+  } catch (error) {
+    console.log("Error factorial:", error.message);
+    fallidas++;
+  }
+
+  console.log(`\nResultados: ${pasadas} pasadas, ${fallidas} fallidas`);
+
+  if (fallidas > 0) process.exit(1);
 }
 
+ejecutarPruebas();

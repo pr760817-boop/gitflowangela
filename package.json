@@ -2,7 +2,11 @@
   "name": "flowAngela", 
   "version": "1.0.0",
   "type": "module",
+<<<<<<< HEAD
   "description": "primera aplicacion felipe flow",
+=======
+  "description": "primera aplicacion Angela flow",
+>>>>>>> 1af8cf65fc59fa57f8929f36be9917900b1e4b6b
   "scripts": {
     "start": "node src/app.js",
     "test": "node test/app.test.js"
